@@ -128,16 +128,21 @@ console.log("¿Hace falta activar el protocolo de urgencia?:", protocoloEmergenc
 //<<<<<<<<<<<<<<<<<<< Apartado 3 >>>>>>>>>>>>>>>>>>>>
 
 const reasignaPacientesAMedicoFamilia = (pacientes: Pacientes[]): Pacientes[] => {
+  let x : Pacientes[] = []
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
-      pacientes[i].especialidad = "Médico de familia";
+      x = [...x,
+      {...pacientes[i], especialidad: "Médico de familia",}
+    ]
     };
   };
-  return pacientes;
+  return x
 };
 
 const pacientesReasignados = reasignaPacientesAMedicoFamilia(pacientes)
 console.log(pacientesReasignados);
+console.log(pacientes);
+
 
 //<<<<<<<<<<<<<<<<<< Apartado 4 >>>>>>>>>>>>>>>>>>
 
