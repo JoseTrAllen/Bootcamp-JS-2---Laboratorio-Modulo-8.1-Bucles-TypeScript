@@ -98,7 +98,7 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes
   let i = 0;
 
   while (i < pacientes.length) {
-    if (pacientes[i].edad < 10) {
+    if (pacientes[i].edad < 10 && pacientes.especialidad === "Pediatra") {
       pacientesMenoresDeDiezAños = [...pacientesMenoresDeDiezAños, pacientes[i]];
     };
     i++;
